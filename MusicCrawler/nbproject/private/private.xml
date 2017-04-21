@@ -3,28 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/MusicCrawler/src/musiccrawler/model/Music.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/MusicCrawler/src/musiccrawler/database/DataBaseConnectionImpl.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/MusicCrawler/src/musiccrawler/App.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/MusicCrawler/src/musiccrawler/validate/Validator.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/MusicCrawler/JdbcQuery.properties</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/MusicCrawler/src/musiccrawler/common/Utils.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/MusicCrawler/configdatabase.properties</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/MusicCrawler/src/musiccrawler/dao/DAOImpl.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/MusicCrawler/src/musiccrawler/constant/JdbcResourceConstant.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/MusicCrawler/src/musiccrawler/common/HtmlToolFix.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/MusicCrawler/src/musiccrawler/MusicCrawler.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/MusicCrawler/src/musiccrawler/Crawler.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/MusicCrawler/src/musiccrawler/common/LoadJdbcResource.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/MusicCrawler/src/musiccrawler/database/IConnection.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/MusicCrawler/src/musiccrawler/model/MusicTableModel.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/MusicCrawler/src/musiccrawler/QueryOption.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/MusicCrawler/src/musiccrawler/jframe/listener/OnCloseFrameListener.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/MusicCrawler/src/musiccrawler/constant/Constant.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/MusicCrawler/src/musiccrawler/service/MusicCrawlService.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/MusicCrawler/src/musiccrawler/model/Singer.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/MusicCrawler/src/musiccrawler/constant/MusicQualityType.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/MusicCrawler/src/musiccrawler/database/JDBCConfiguration.java</file>
+            <file>file:/D:/Learning/LearningProject/MusicCrawler/src/musiccrawler/App.java</file>
         </group>
     </open-files>
 </project-private>

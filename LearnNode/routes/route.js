@@ -1,9 +1,11 @@
 var mysql = require("mysql");
 var regex = new RegExp("^\"|\"$");
+var music = require("../models/music");
 
 function RestRouter(router, connection) {
   var self = this;
   self.handleRouter(router, connection);
+  music = new music();
 }
 
 RestRouter.prototype.handleRouter = function (router, connection) {
@@ -13,14 +15,16 @@ RestRouter.prototype.handleRouter = function (router, connection) {
   });
 
   router.get("/getAllMusic", function (req, res) {
-    var query = "SELECT M.music_id, M.title, M.image, M.url, M.lyric, M.description, M.stream, M.quality, S.name, S.age, S.description, S.avatar FROM ?? M INNER JOIN ?? S ON S.music_id = M.music_id";
-    var table = ["music", "singer"];
+    var query = "SELECT M.music_id, M.title, M.image, M.url, M.lyric, M.description, M.stream, M.quality, S.name, S.age, S.description, S.avatar FROM ?? M INNER JOIN ?? S ON S.music_id = M.music_id LIMIT ? OFFSET ?";
+    var limit = +req.query.limit || 10;
+    var offset = +req.query.offset || 0;
+    var table = ["music", "singer", limit, offset];
     query = mysql.format(query, table);
     connection.query(query, function (err, rows) {
       if (err) {
         res.json({ "Error": true, "Message": "Error executing MySQL query" });
       } else {
-        res.json({ "Error": false, "Message": "Success", "Musics": rows, "count": rows.length});
+        res.json({ "Error": false, "Message": "Success", "Musics": music.makeListMusic(rows), "count": rows.length });
       }
     });
   });
@@ -35,7 +39,7 @@ RestRouter.prototype.handleRouter = function (router, connection) {
       }
       var rowCount = rows.length;
       if (rowCount > 0) {
-        res.json({ "Error": false, "Message": "Success", "Music": rows, "count": rowCount });
+        res.json({ "Error": false, "Message": "Success", "Music": music.makeListMusic(rows), "count": rowCount });
       } else {
         res.json({ "Error": false, "Message": "Data not found" });
       }
@@ -55,7 +59,7 @@ RestRouter.prototype.handleRouter = function (router, connection) {
       }
       var rowCount = rows.length;
       if (rowCount > 0) {
-        res.json({ "Error": false, "Message": "Success", "Music": rows, "count": rowCount});
+        res.json({ "Error": false, "Message": "Success", "Music": music.makeListMusic(rows), "count": rowCount });
       } else {
         res.json({ "Error": false, "Message": "Data not found" });
       }
@@ -75,14 +79,12 @@ RestRouter.prototype.handleRouter = function (router, connection) {
       }
       var rowCount = rows.length;
       if (rowCount > 0) {
-        res.json({ "Error": false, "Message": "Success", "Music": rows, "count": rowCount});
+        res.json({ "Error": false, "Message": "Success", "Music": music.makeListMusic(rows), "count": rowCount });
       } else {
         res.json({ "Error": false, "Message": "Data not found" });
       }
     });
   });
-
-
 }
 
 module.exports = RestRouter;

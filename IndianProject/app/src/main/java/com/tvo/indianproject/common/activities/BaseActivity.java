@@ -6,9 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.tvo.indianproject.deps.DaggerDeps;
 import com.tvo.indianproject.deps.Deps;
+import com.tvo.indianproject.services.Service;
 import com.tvo.indianproject.services.networking.NetworkModule;
 
 import java.io.File;
+
+import javax.inject.Inject;
 
 /**
  * Created by Tavv
@@ -17,6 +20,8 @@ import java.io.File;
 
 public abstract class BaseActivity extends AppCompatActivity {
     protected Deps deps;
+    @Inject
+    public Service service;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -24,7 +29,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(layoutId());
         File fileCache = new File(getCacheDir(), "responses");
         deps = DaggerDeps.builder().networkModule(new NetworkModule(fileCache)).build();
+        deps.inject(this);
         initView();
+        initToolbar();
         initEvents();
         initData();
     }
@@ -37,9 +44,15 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected abstract void initData();
 
+    protected void initToolbar() {
+    }
     protected abstract String TAG();
 
-    protected Deps getDeps(){
+    protected Deps getDeps() {
         return deps;
+    }
+
+    protected Service getService() {
+        return service;
     }
 }

@@ -17,7 +17,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         buildConfigField "int", "LIMIT", "100"
-        buildConfigField "String", "BASEURL", "\"http://localhost:8080/\""
+        buildConfigField "String", "BASEURL", "\"http://192.168.213.2:8080/\""
         buildConfigField "int", "CACHE_TIME", "9600"
         buildConfigField "String", "STR_CACHE_TEMPLATE", "\"max-age=%d\""
     }

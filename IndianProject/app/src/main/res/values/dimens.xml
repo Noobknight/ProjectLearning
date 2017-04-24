@@ -29,4 +29,10 @@
     <dimen name="language_title_setting">17sp</dimen>
 
     <dimen name="toast_height">48dp</dimen>
+
+
+    <dimen name="item_loading_height">50dp</dimen>
+    <dimen name="item_loading_margin">8dp</dimen>
+    <dimen name="item_loading_padding">10dp</dimen>
+
 </resources>

@@ -1,5 +1,7 @@
 package com.tvo.indianproject.presenters;
 
+import android.support.annotation.Nullable;
+
 import com.tvo.indianproject.listeners.ServiceCallbackListener;
 import com.tvo.indianproject.models.Music;
 import com.tvo.indianproject.models.MusicRepository;
@@ -32,7 +34,7 @@ public class HomePresenter extends BasePresenter<HomeView.ListMusic> implements 
 
 
     @Override
-    public void onInitialListRequested(int limitReq, int offsetReq) {
+    public void onInitialListRequested(@Nullable Integer limitReq, @Nullable Integer offsetReq) {
         int limit = limitReq | ITEM_REQUEST_LIMIT;
         int offset = offsetReq | ITEM_REQUEST_INITIAL_OFFSET;
         getListMusic(limit, offset);

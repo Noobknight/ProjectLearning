@@ -1,5 +1,7 @@
 package com.tvo.indianproject.views;
 
+import android.support.annotation.Nullable;
+
 import com.tvo.indianproject.models.Music;
 
 import java.util.List;
@@ -12,7 +14,7 @@ import java.util.List;
 public interface HomeView {
 
     interface ViewActions {
-        void onInitialListRequested(int limit, int offset);
+        void onInitialListRequested(@Nullable Integer limitReq, @Nullable Integer offsetReq);
 
         void onListEndReached(int limit, int offset);
 

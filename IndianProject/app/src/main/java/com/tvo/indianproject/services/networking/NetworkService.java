@@ -16,6 +16,6 @@ import rx.Observable;
 public interface NetworkService {
 
     @GET("api/getAllMusic")
-    Observable<MusicRepository> getMusicReponsitory(@Nullable @Query("limit") int limit,@Nullable @Query("offset") int offset);
+    Observable<MusicRepository> getMusicReponsitory(@Nullable @Query("limit") Integer limit,@Nullable @Query("offset") Integer offset);
 
 }

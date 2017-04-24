@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">IndianProject</string>
+    <string name="music_title">Title</string>
+    <string name="music_artist">Artist</string>
+    <string name="music_quality">Quality</string>
+    <string name="music_quality_temp">MP3</string>
 </resources>

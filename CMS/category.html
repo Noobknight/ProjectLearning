@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="./src/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="./src/bootstrap.js"></script>
+</head>
+
+<body>
+    <form method="post" name="form" enctype="multipart/form-data" id="formSubmit">
+        <fieldset>
+            Category Id :
+            <input type="text" placeholder="Category id" name="category_id" value="69"></br>
+            Category Name :
+            <input type="text" placeholder="Category name" name="category_name" value="Clothes"></br>
+            Level :
+            <input type="text" placeholder="Level category" name="category_level" value="1"></br>
+            Parent Id :
+            <input type="text" placeholder="Parent category" name="category_parent_id"></br>
+            Category Description :
+            <input type="text" placeholder="Category description" name="category_description" value="description here..."></br>
+            Image :
+            <input type="file" name="category_image"></br>
+        </fieldset>
+    </form>
+    <input type="submit" form="formSubmit" value="Submit" id="btnSubmit"></button>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar"></div>
+    </div>
+</body>
+<script type="text/javascript" src="./src/app.js"></script>
+</html>

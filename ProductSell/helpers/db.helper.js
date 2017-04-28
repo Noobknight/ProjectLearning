@@ -52,9 +52,8 @@ DatabaseHelper.prototype.save = function (product, callback) {
     // } while (!isIdNotExist);
 }
 
-DatabaseHelper.prototype.insertCategory = function (category, callback) {
-    var query = "INSERT INTO `category` (`category_id`,`name`,`level`,`description`,`parent_id`,`image`,`time_create`,`time_update`) VALUES (?, ?, ?, ?, ?, ?, now(), now())";
-    var params = [category.category_id, category.name, category.level, category.description, category.parent_id, category.image];
+DatabaseHelper.prototype.insertCategory = function (params, callback) {
+    var query = "INSERT INTO `category`(`category_id`, `name`, `level`, `description`, `parent_id`, `image`, `time_create`, `time_update`) VALUES (?,?,?,?,?,?,now(),now())";
     query = mysql.format(query, params);
     this.connection.query(query, function (err, row) {
         if (err) {
@@ -69,7 +68,7 @@ DatabaseHelper.prototype.insertCategory = function (category, callback) {
         var result = {
             "status_code": constant.MSG_CODE.SUCCESS,
             "message": constant.ErrorMsg.message_ok,
-            "category_id": category.category_id
+            "category_id": params[0]
         };
         return callback(result);
     });

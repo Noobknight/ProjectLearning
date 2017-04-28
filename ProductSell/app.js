@@ -3,8 +3,9 @@ var path = require("path");
 var mysql = require("mysql");
 var bodyParser = require("body-parser");
 var route = require("./routes/route.js");
-
 var app = express();
+app.use(express.static(path.join(__dirname, "public")));
+app.use('/image',express.static(path.join(__dirname, 'public/images')));
 
 function Server() {
   var self = this;
@@ -31,13 +32,11 @@ Server.prototype.connectionSql = function () {
 
 Server.prototype.configurationDb = function (connection) {
   var self = this;
-  // app.use(bodyParser.urlencoded({ extended: false }));
-  app.use(bodyParser.urlencoded());
+  app.use(bodyParser.urlencoded({ extended: false }));
+  //app.use(bodyParser.urlencoded());
   // app.use(bodyParser.json({ type: 'application/*+json' }));
-  app.use(bodyParser.json());
+  //app.use(bodyParser.json());
   app.use(function (req, res, next) {
-    // res.setHeader('Content-Type', 'application/json');
-    // res.end(JSON.stringify(req.body, null, 2));  
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
     res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');

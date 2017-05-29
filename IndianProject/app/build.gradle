@@ -8,7 +8,7 @@ buildscript {
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.tvo.indianproject"
         minSdkVersion 14
@@ -16,7 +16,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        buildConfigField "int", "LIMIT", "100"
+        buildConfigField "int", "LIMIT", "10"
         buildConfigField "String", "BASEURL", "\"http://192.168.213.2:8080/\""
         buildConfigField "int", "CACHE_TIME", "9600"
         buildConfigField "String", "STR_CACHE_TEMPLATE", "\"max-age=%d\""

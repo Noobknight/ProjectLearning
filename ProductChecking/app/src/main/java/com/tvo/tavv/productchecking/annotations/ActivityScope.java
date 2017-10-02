@@ -15,3 +15,4 @@ import javax.inject.Scope;
 @Retention(value = RetentionPolicy.RUNTIME)
 public @interface ActivityScope {
 }
+

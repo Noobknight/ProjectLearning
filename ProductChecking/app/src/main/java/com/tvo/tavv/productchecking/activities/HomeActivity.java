@@ -9,7 +9,7 @@ import android.util.Log;
 
 import com.tvo.tavv.productchecking.R;
 import com.tvo.tavv.productchecking.common.BaseActivity;
-import com.tvo.tavv.productchecking.fragments.ScanbarFragment;
+import com.tvo.tavv.productchecking.fragments.CategoryFragment;
 import com.tvo.tavv.productchecking.utils.VersionUtils;
 
 import java.util.ArrayList;
@@ -61,7 +61,7 @@ public class HomeActivity extends BaseActivity {
 
     private void initScanbarFragment() {
         mFragmentTransaction = mFragmentManager.beginTransaction();
-        mFragmentTransaction.replace(R.id.container, ScanbarFragment.newInstance());
+        mFragmentTransaction.replace(R.id.container, CategoryFragment.getInstance());
         mFragmentTransaction.commit();
     }
 
@@ -74,7 +74,7 @@ public class HomeActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if(isApprovePerformTransaction){
+        if (isApprovePerformTransaction) {
             initScanbarFragment();
         }
     }
@@ -82,7 +82,7 @@ public class HomeActivity extends BaseActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
-            case ZXING_CAMERA_PERMISSION:
+            case ZXING_CAMERA_PERMISSION :
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     isApprovePerformTransaction = true;
                 } else {

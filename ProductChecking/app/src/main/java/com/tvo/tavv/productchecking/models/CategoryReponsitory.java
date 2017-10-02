@@ -1,20 +1,21 @@
 package com.tvo.tavv.productchecking.models;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by Tavv
- * on 25/04/2017.
+ * on 04/05/2017.
  */
-public class ProductRepository extends BaseReponsitory<Product> {
+public class CategoryReponsitory extends BaseReponsitory<Category> implements Serializable{
 
     @Override
-    public List<Product> getListModel() {
+    public List<Category> getListModel() {
         return models;
     }
 
     @Override
-    public void ListModel(List<Product> models) {
+    public void ListModel(List<Category> models) {
         this.models = models;
     }
 

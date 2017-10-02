@@ -16,6 +16,7 @@
 
 
         <ImageView
+            android:id="@+id/imgCategory"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".3"
@@ -30,6 +31,7 @@
 
 
             <TextView
+                android:id="@+id/txtCategoryName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -38,6 +40,7 @@
 
 
             <jp.shts.android.library.TriangleLabelView xmlns:label_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/txtCountProduct"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top|right"

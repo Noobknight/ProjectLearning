@@ -1,6 +1,8 @@
 package com.tvo.tavv.productchecking.services;
 
+import com.tvo.tavv.productchecking.constants.ApiConstant;
 import com.tvo.tavv.productchecking.listeners.CallbackResponseService;
+import com.tvo.tavv.productchecking.models.CategoryReponsitory;
 import com.tvo.tavv.productchecking.models.Product;
 import com.tvo.tavv.productchecking.models.ProductRepository;
 import com.tvo.tavv.productchecking.models.ResponseModel;
@@ -80,6 +82,34 @@ public class Service {
                     @Override
                     public void onNext(ResponseModel responseModel) {
                         callback.onSuccess(responseModel);
+                    }
+                });
+    }
+
+    public Subscription getAllCategory(final CallbackResponseService<CategoryReponsitory> callback) {
+        return mNetworkService.getAllCategory(ApiConstant.GET_ALL_CATEGORY)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .onErrorResumeNext(new Func1<Throwable, Observable<? extends CategoryReponsitory>>() {
+                    @Override
+                    public Observable<? extends CategoryReponsitory> call(Throwable throwable) {
+                        return Observable.error(throwable);
+                    }
+                })
+                .subscribe(new Observer<CategoryReponsitory>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        callback.onError(new NetworkError(e));
+                    }
+
+                    @Override
+                    public void onNext(CategoryReponsitory categoryReponsitory) {
+                        callback.onSuccess(categoryReponsitory);
                     }
                 });
     }

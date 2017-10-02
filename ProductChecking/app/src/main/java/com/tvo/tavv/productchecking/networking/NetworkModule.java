@@ -68,13 +68,13 @@ public class NetworkModule {
 
     @Provides
     @Singleton
-    public NetworkService provideNetworkService(Retrofit retrofit){
+    public NetworkService provideNetworkService(Retrofit retrofit) {
         return retrofit.create(NetworkService.class);
     }
 
     @Provides
     @Singleton
-    public Service provideService(NetworkService networkService){
+    public Service provideService(NetworkService networkService) {
         return new Service(networkService);
     }
 

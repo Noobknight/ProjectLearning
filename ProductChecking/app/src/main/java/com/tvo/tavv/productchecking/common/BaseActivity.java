@@ -8,12 +8,9 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import com.tvo.tavv.productchecking.dependencies.DaggerNetComponent;
+import com.tvo.tavv.productchecking.App;
 import com.tvo.tavv.productchecking.dependencies.NetComponent;
-import com.tvo.tavv.productchecking.networking.NetworkModule;
 import com.tvo.tavv.productchecking.services.Service;
-
-import java.io.File;
 
 import javax.inject.Inject;
 
@@ -37,14 +34,17 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     private Toolbar mToolbar;
 
+    protected App mApp;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layoutId());
-        File fileCache = new File(getCacheDir(), "responses");
-        deps = DaggerNetComponent.builder().networkModule(new NetworkModule(fileCache)).build();
-        deps.inject(this);
+//        File fileCache = new File(getCacheDir(), "responses");
+        mApp = (App) getApplication();
         mFragmentManager = getSupportFragmentManager();
+//        deps = DaggerNetComponent.builder().networkModule(new NetworkModule(fileCache)).build();
+        mApp.getNetComponent().inject(this);
         initView();
         initToolbar();
         initEvents();

@@ -11,7 +11,8 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         buildConfigField "int", "LIMIT", "100"
-        buildConfigField "String", "BASEURL", "\"http://192.168.213.2:8070/\""
+        buildConfigField "String", "BASEURL", "\"http://192.168.101.34:8070/api/\""
+        buildConfigField "String", "DOMAIN", "\"http://192.168.101.34:8070/\""
         buildConfigField "int", "CACHE_TIME", "9600"
         buildConfigField "String", "STR_CACHE_TEMPLATE", "\"max-age=%d\""
     }
@@ -70,4 +71,9 @@ dependencies {
     compile 'pub.devrel:easypermissions:0.4.0'
     compile 'com.github.shts:TriangleLabelView:1.1.2'
     compile 'com.github.siyamed:android-shape-imageview:0.9.3@aar'
+
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+
+    compile 'com.intuit.sdp:sdp-android:1.0.4'
+    compile 'com.intuit.ssp:ssp-android:1.0.4'
 }

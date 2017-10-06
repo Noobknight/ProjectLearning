@@ -38,7 +38,6 @@ public class App extends Application {
         mNetComponent.injectApp(this);
 
         mService = mNetComponent.getService();
-
     }
 
     public NetComponent getNetComponent() {
